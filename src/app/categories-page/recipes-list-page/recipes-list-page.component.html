@@ -1,0 +1,7 @@
+<div class="recipes__list" *ngFor="let recipe of recipesList">
+  <div class="recipe" [routerLink]="['/recipes', recipe.idMeal ]">
+    <img src={{recipe.strMealThumb}} alt="">
+    <h3 >{{recipe.strMeal}}</h3>
+  </div>
+</div>
+

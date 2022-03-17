@@ -1,0 +1,10 @@
+.container {
+  background-image: '../assets/black-texture.jpg';
+  width: 100hv;
+  height: 100hv;
+}
+
+.main {
+  background: url('../assets/black-texture.jpg') no-repeat;
+  padding: 30px;
+}
