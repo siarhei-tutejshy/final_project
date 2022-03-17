@@ -1,0 +1,8 @@
+<p>my-recipes-page works!</p>
+<div class="recipes__list" *ngFor="let recipe of recipesList">
+  <div class="recipe" [routerLink]="['/my_recipes', recipe.idMeal ]" >
+    <img src={{recipe.strMealThumb}} alt="">
+    <h3 >{{recipe.strMeal}}</h3>
+    <button (click)="removeRecipe(recipe.idMeal)">----</button>
+  </div>
+</div>

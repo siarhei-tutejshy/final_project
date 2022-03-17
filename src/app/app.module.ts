@@ -12,6 +12,8 @@ import { CategoriesPageComponent } from './categories-page/categories-page.compo
 import { CategoriesService } from './services/categories.service';
 import { RecipesListPageComponent } from './categories-page/recipes-list-page/recipes-list-page.component';
 import { RecipesService } from './services/recipes.service';
+import { MyRecipesService } from './services/my-recipes.service';
+import { MyRecipesPageComponent } from './my-recipes-page/my-recipes-page.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +23,15 @@ import { RecipesService } from './services/recipes.service';
     HomePageComponent,
     RecipesPageComponent,
     CategoriesPageComponent,
-    RecipesListPageComponent
+    RecipesListPageComponent,
+    MyRecipesPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [CategoriesService,RecipesService],
+  providers: [CategoriesService,RecipesService,MyRecipesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

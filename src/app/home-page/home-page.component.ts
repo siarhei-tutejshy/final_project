@@ -1,15 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RecipesService } from '../services/recipes.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
+  constructor(private recipesService: RecipesService, private router: Router) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  showRandomRecipe(): void {
+    let randomId: number;
+    this.recipesService.getRandomRecipe().subscribe((recipe) => {
+      randomId = recipe.meals[0].idMeal;
+      this.router.navigate(['/recipes', +randomId]);
+    });
   }
-
 }

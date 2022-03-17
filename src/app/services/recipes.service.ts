@@ -17,4 +17,9 @@ export class RecipesService {
       `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
     );
   }
+  getRandomRecipe(): Observable<any> {
+    return this.http.get(
+      `https://www.themealdb.com/api/json/v1/1/random.php`
+    );
+  }
 }
