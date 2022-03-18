@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppDivComponent } from './app-div/app-div.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RecipesPageComponent } from './recipes-page/recipes-page.component';
@@ -15,23 +13,19 @@ import { RecipesService } from './services/recipes.service';
 import { MyRecipesService } from './services/my-recipes.service';
 import { MyRecipesPageComponent } from './my-recipes-page/my-recipes-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    AppDivComponent,
     NavbarComponent,
     HomePageComponent,
     RecipesPageComponent,
     CategoriesPageComponent,
     RecipesListPageComponent,
-    MyRecipesPageComponent
+    MyRecipesPageComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [CategoriesService,RecipesService,MyRecipesService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  providers: [CategoriesService, RecipesService, MyRecipesService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

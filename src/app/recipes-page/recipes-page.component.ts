@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, UrlSegment } from '@angular/router';
 import { MyRecipesService } from '../services/my-recipes.service';
-import { RecipesService } from './../services/recipes.service';
+import { Irecipe, RecipesService } from './../services/recipes.service';
 
 @Component({
   selector: 'app-recipes-page',
@@ -9,7 +9,7 @@ import { RecipesService } from './../services/recipes.service';
   styleUrls: ['./recipes-page.component.css'],
 })
 export class RecipesPageComponent implements OnInit {
-  recipe: Object = {};
+  recipe: Irecipe = {};
   constructor(
     private recipesService: RecipesService,
     private myRecipesService: MyRecipesService,
@@ -17,23 +17,25 @@ export class RecipesPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     this.route.params.subscribe((params: Params) => {
-      console.log(params)
       this.route.url.subscribe((urlSegment: UrlSegment[]) => {
         if (urlSegment[0].path === 'my_recipes') {
-          this.recipe =  this.myRecipesService.getRecipeById(+params['id'])
+          this.recipe = this.myRecipesService.getRecipeById(+params['id']) || {};
+        } else if(urlSegment[0].path === 'recipes'){this.recipesService.getRecipeById(+params['id']).subscribe((data) => {
+          console.log('in this')
+          this.recipe = data;
+        });}
 
-        }
-
-    })
-      this.recipesService.getRecipeById(+params['id']).subscribe((data) => {
-        this.recipe = data.meals[0];
-      });
+       });
     });
   }
   addRecipe() {
-    console.log(this.recipe);
+    this.recipe.isAdded = true
     this.myRecipesService.addRecipe(this.recipe);
+  }
+  removeRecipe() {
+
+    this.myRecipesService.removeRecipe(this.recipe.idMeal!);
+    this.recipe.isAdded = false
   }
 }

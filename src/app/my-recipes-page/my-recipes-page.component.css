@@ -1,7 +1,45 @@
+.recipes__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.recipe {
+  max-width: 16rem;
+  padding: 5px;
+  margin: 0 20px 20px 0;
+  box-shadow: 0 0 20px 2px rgba(161, 30, 30, 0.4);
+  text-align: center;
+  cursor: pointer;
+}
+.recipe:hover{
+  transform: scale(1.04);
+  transition: transform 0.4s;
+}
 h3{
   color: #fff;
+  padding: 10px 20px;
+  background-color: rgba(161, 30, 30, 0.7);
+  text-shadow: 0 0 2px#fff;
 }
 img{
   width: 15rem;
   height: 15rem;
+}
+button{
+  width: 100%;
+  margin-top: 10px;
+  border-color: black;
+ color: #fff;
+ text-transform: uppercase;
+ padding: 10px 0;
+
+}
+button.rem__btn{
+ background-color:#fff;
+ color: rgba(161, 30, 30, 0.7);
+ font-weight: 700;
+
+}
+button:hover{
+  background-color:rgb(255, 255, 255, 0.4);
 }

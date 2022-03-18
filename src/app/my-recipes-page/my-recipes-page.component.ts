@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyRecipesService } from './../services/my-recipes.service';
+import { Irecipe } from './../services/recipes.service';
 
 @Component({
   selector: 'app-my-recipes-page',
@@ -7,7 +8,7 @@ import { MyRecipesService } from './../services/my-recipes.service';
   styleUrls: ['./my-recipes-page.component.css']
 })
 export class MyRecipesPageComponent implements OnInit {
-  recipesList: any[] = []
+  recipesList: Irecipe[] = []
 
   constructor(private myRecipesService:MyRecipesService) { }
 
@@ -16,7 +17,7 @@ export class MyRecipesPageComponent implements OnInit {
     console.log(this.recipesList)
   }
   removeRecipe(id:any){
-    this.myRecipesService.removeRecipe(+id)
+    this.myRecipesService.removeRecipe(id)
     this.recipesList = this.myRecipesService.myRecipes
   }
 

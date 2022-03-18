@@ -1,5 +1,8 @@
-<p>categories-page works!</p>
-<div *ngFor="let category of categories">
-  <p [routerLink]="category.strCategory || category.strArea">{{category.strCategory || category.strArea}}</p>
+
+<div class="cat__container">
+  <div *ngFor="let category of categories" class="cat">
+      <p [routerLink]="category.strCategory || category.strArea">{{category.strCategory || category.strArea}}</p>
+
+  </div>
 </div>
 

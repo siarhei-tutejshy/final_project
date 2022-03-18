@@ -15,8 +15,8 @@ export class HomePageComponent implements OnInit {
   showRandomRecipe(): void {
     let randomId: number;
     this.recipesService.getRandomRecipe().subscribe((recipe) => {
-      randomId = recipe.meals[0].idMeal;
-      this.router.navigate(['/recipes', +randomId]);
+      randomId = +recipe['idMeal'];
+      this.router.navigate(['/recipes', randomId]);
     });
   }
 }

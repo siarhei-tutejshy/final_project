@@ -1,4 +1,4 @@
-import { UpperCasePipe } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { CategoriesService } from 'src/app/services/categories.service';
