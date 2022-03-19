@@ -3,30 +3,28 @@ import { ActivatedRoute, UrlSegment } from '@angular/router';
 import { CategoriesService } from '../services/categories.service';
 
 @Component({
-  selector: 'app-categories-page',
-  templateUrl: './categories-page.component.html',
-  styleUrls: ['./categories-page.component.css'],
+    selector: 'app-categories-page',
+    templateUrl: './categories-page.component.html',
+    styleUrls: ['./categories-page.component.css'],
 })
+
 export class CategoriesPageComponent implements OnInit {
-  categories: Array<any> = [];
-  constructor(
-    private categoriesService: CategoriesService,
-    private route: ActivatedRoute
-  ) {}
+    categories: Array<any> = [];
 
-  ngOnInit(): void {
-    this.route.url.subscribe((urlSegment: UrlSegment[]) => {
-      if (urlSegment[0].path === 'areas') {
-        this.categoriesService.fetchAreas().subscribe((cat) => {
-          console.log(cat.meals)
-          this.categories = cat.meals;
+    constructor(
+        private categoriesService: CategoriesService,
+        private route: ActivatedRoute
+    ) {}
+
+    ngOnInit(): void {
+        this.route.url.subscribe((urlSegment: UrlSegment[]) => {
+            if (urlSegment[0].path === 'areas') {
+                this.categoriesService.fetchAreas()
+                    .subscribe((cat) => {this.categories = cat.meals});
+            } else if (urlSegment[0].path === 'categories') {
+                this.categoriesService.fetchCategories()
+                .subscribe((cat) => {this.categories = cat.categories});
+            }
         });
-      } else  if (urlSegment[0].path === 'categories') {
-        this.categoriesService.fetchCategories().subscribe((cat) => {
-          this.categories = cat.categories;
-        })
-    };
-
-  })
-}
+    }
 }

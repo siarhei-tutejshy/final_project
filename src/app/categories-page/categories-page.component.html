@@ -1,4 +1,3 @@
-
 <div class="cat__container">
   <div *ngFor="let category of categories" class="cat">
       <p [routerLink]="category.strCategory || category.strArea">{{category.strCategory || category.strArea}}</p>

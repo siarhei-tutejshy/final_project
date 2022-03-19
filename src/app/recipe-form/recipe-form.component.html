@@ -17,7 +17,7 @@
       ><div [formGroupName]="idx">
 
           <label class="label_ingredient">Ingredient {{idx + 1}} </label>
-          <input type="text"  formControlName="ingredient" placeholder="ingredient">...<input type="text" formControlName="measure" placeholder="mesure">
+          <input type="text"  formControlName="ingredient" placeholder="ingredient"><input class="measure" type="text" formControlName="measure" placeholder="mesure">
       </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
       <div class="btn__block">
         <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Отправить</button>
         <button class="btn clear" (click)="clearForm()" type="button">clear form </button>
-        <button class="btn__close" (click)="close.emit()">close</button>
+        <button class="btn__close" (click)="close.emit()"></button>
       </div>
 
     </form>

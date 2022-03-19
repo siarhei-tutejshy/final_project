@@ -1,28 +1,28 @@
 <div class="recipe">
-  <p class="title">{{ recipe.strMeal }}</p>
-  <div class="head">
-    <img src="{{ recipe.strMealThumb }}" alt="#" />
-    <div class="blank"></div>
+    <p class="title">{{ recipe.strMeal }}</p>
+    <div class="head">
+        <img src="{{ recipe.strMealThumb }}" alt="#" />
+        <div class="blank"></div>
 
-    <div class="ingredients">
-      <ng-container *ngFor="let ingredient of recipe.strIngredient; index as i">
-        <ng-container *ngFor="let measure of recipe.strMeasure; index as j">
-          <ng-container *ngIf="i === j">
-            <p>{{ ingredient }} <span>..............</span> {{ measure }}</p>
-          </ng-container>
+        <div class="ingredients">
+        <ng-container *ngFor="let ingredient of recipe.strIngredient; index as i">
+            <ng-container *ngFor="let measure of recipe.strMeasure; index as j">
+            <ng-container *ngIf="i === j">
+                <p>{{ ingredient }} <span>..............</span> {{ measure }}</p>
+            </ng-container>
+            </ng-container>
         </ng-container>
-      </ng-container>
+        </div>
     </div>
-  </div>
-  <div class="instruction">
-    {{ recipe.strInstructions }}
-  </div>
+    <div class="instruction">
+        {{ recipe.strInstructions }}
+    </div>
 
-  <button class="rem__btn" *ngIf="recipe.isAdded; else btnRemove" (click)="removeRecipe() ">
-    remove recipe
-  </button>
-  <ng-template #btnRemove>
-    <button  (click)="addRecipe()">add in my recipes</button>
-  </ng-template>
+    <button class="rem__btn" *ngIf="recipe.isAdded; else btnRemove" (click)="removeRecipe() ">
+        remove recipe
+    </button>
+    <ng-template #btnRemove>
+        <button  (click)="addRecipe()">add in my recipes</button>
+    </ng-template>
 </div>
 

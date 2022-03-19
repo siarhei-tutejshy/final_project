@@ -1,15 +1,18 @@
 <p>my-recipes-page works!</p>
-<div class="recipes__list" >
-  <ng-container *ngFor="let recipe of recipesList">
-  <div class="recipe" [routerLink]="['/my_recipes', recipe.idMeal ]" >
-    <img src={{recipe.strMealThumb}} alt="#">
-    <h3 >{{recipe.strMeal}}</h3>
-    <button class="rem__btn" (click)="removeRecipe(recipe.idMeal)">remove recipe</button>
-  </div>
-</ng-container>
-<button (click)="showForm = true">add recipe</button>
-<app-recipe-form  *ngIf="showForm"
+<div class="recipes__list">
+    <button class="add" (click)="showForm = true">add recipe</button>
+    <ng-container *ngFor="let recipe of recipesList">
+        <div class="recipe" [routerLink]="['/my_recipes', recipe.idMeal]">
+            <img src="{{ recipe.strMealThumb }}" alt="#" />
+            <h3>{{ recipe.strMeal }}</h3>
+            <button class="rem__btn" (click)="removeRecipe(recipe.idMeal)">
+                remove recipe
+            </button>
+        </div>
+    </ng-container>
 
-(close)="showForm = false"></app-recipe-form>
-
+    <app-recipe-form
+        *ngIf="showForm"
+        (close)="showForm = false"
+    ></app-recipe-form>
 </div>

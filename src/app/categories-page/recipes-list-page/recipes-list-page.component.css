@@ -3,31 +3,40 @@ h3 {
   margin: 10px 0;
   text-align: center;
 }
+
 img {
   width: 16rem;
   height: 16rem;
 }
+
 .recipes__list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .recipe {
   max-width: 16rem;
   padding: 5px;
   margin: 0 20px 20px 0;
   box-shadow: 0 0 20px 2px rgba(161, 30, 30, 0.4);
 }
-.recipe:hover{
+.recipe:hover {
   transform: scale(1.04);
   transition: transform 0.4s;
-}
-.prel{
-  color: #fff;
 }
 
 @media (max-width: 638px) {
   .recipes__list {
     justify-content: center;
+  }
+  .recipe {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 630px) {
+  .recipe {
+    margin-right: 0;
   }
 }

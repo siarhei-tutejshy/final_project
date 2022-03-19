@@ -1,12 +1,12 @@
 <nav>
-  <div class="logo">
-    <a routerLink="/"></a>
-  </div>
-  <ul [ngClass]="{show: showNav}"(click)="showNav = !showNav" >
-    <li><a routerLink="/">home</a></li>
-    <li><a routerLink="/categories">categories</a></li>
-    <li><a routerLink="/areas">areas</a></li>
-    <li><a routerLink="/my_recipes">my recipes</a></li>
-  </ul>
-  <div class="menu" (click)="showNav = !showNav"></div>
+    <div class="logo">
+        <a routerLink="/"></a>
+    </div>
+    <ul [ngClass]="{ show: showNav }" (click)="showNav = !showNav">
+        <li><a routerLink="/">home</a></li>
+        <li><a routerLink="/categories">categories</a></li>
+        <li><a routerLink="/areas">areas</a></li>
+        <li><a routerLink="/my_recipes">my recipes</a></li>
+    </ul>
+    <div class="menu" (click)="showNav = !showNav"></div>
 </nav>

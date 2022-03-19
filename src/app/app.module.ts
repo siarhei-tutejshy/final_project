@@ -15,20 +15,24 @@ import { MyRecipesPageComponent } from './my-recipes-page/my-recipes-page.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomePageComponent,
-    RecipesPageComponent,
-    CategoriesPageComponent,
-    RecipesListPageComponent,
-    MyRecipesPageComponent,
-    RecipeFormComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
-  providers: [CategoriesService, RecipesService, MyRecipesService],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        HomePageComponent,
+        RecipesPageComponent,
+        CategoriesPageComponent,
+        RecipesListPageComponent,
+        MyRecipesPageComponent,
+        RecipeFormComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+    ],
+    providers: [CategoriesService, RecipesService, MyRecipesService],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}
