@@ -10,6 +10,7 @@ import { CategoriesService } from '../services/categories.service';
 
 export class CategoriesPageComponent implements OnInit {
     categories: Array<any> = [];
+    pageName:string = ''
 
     constructor(
         private categoriesService: CategoriesService,
@@ -18,6 +19,7 @@ export class CategoriesPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.url.subscribe((urlSegment: UrlSegment[]) => {
+            this.pageName = urlSegment[0].path
             if (urlSegment[0].path === 'areas') {
                 this.categoriesService.fetchAreas()
                     .subscribe((cat) => {this.categories = cat.meals});
