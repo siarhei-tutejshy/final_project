@@ -22,6 +22,9 @@ img {
   transform: scale(1.04);
   transition: transform 0.4s;
 }
+.prel{
+  color: #fff;
+}
 
 @media (max-width: 638px) {
   .recipes__list {

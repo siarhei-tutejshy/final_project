@@ -8,7 +8,8 @@ import { Irecipe } from './../services/recipes.service';
   styleUrls: ['./my-recipes-page.component.css']
 })
 export class MyRecipesPageComponent implements OnInit {
-  recipesList: Irecipe[] = []
+  recipesList: Irecipe[] = [];
+  showForm:boolean = false;
 
   constructor(private myRecipesService:MyRecipesService) { }
 

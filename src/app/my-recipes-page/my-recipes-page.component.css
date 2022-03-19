@@ -1,9 +1,13 @@
 .recipes__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+
 }
 .recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   max-width: 16rem;
   padding: 5px;
   margin: 0 20px 20px 0;
@@ -16,6 +20,7 @@
   transition: transform 0.4s;
 }
 h3{
+
   color: #fff;
   padding: 10px 20px;
   background-color: rgba(161, 30, 30, 0.7);

@@ -22,7 +22,6 @@ export class RecipesPageComponent implements OnInit {
         if (urlSegment[0].path === 'my_recipes') {
           this.recipe = this.myRecipesService.getRecipeById(+params['id']) || {};
         } else if(urlSegment[0].path === 'recipes'){this.recipesService.getRecipeById(+params['id']).subscribe((data) => {
-          console.log('in this')
           this.recipe = data;
         });}
 

@@ -12,6 +12,8 @@ import { RecipesListPageComponent } from './categories-page/recipes-list-page/re
 import { RecipesService } from './services/recipes.service';
 import { MyRecipesService } from './services/my-recipes.service';
 import { MyRecipesPageComponent } from './my-recipes-page/my-recipes-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 
 
 @NgModule({
@@ -23,8 +25,9 @@ import { MyRecipesPageComponent } from './my-recipes-page/my-recipes-page.compon
     CategoriesPageComponent,
     RecipesListPageComponent,
     MyRecipesPageComponent,
+    RecipeFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
   providers: [CategoriesService, RecipesService, MyRecipesService],
   bootstrap: [AppComponent],
 })
